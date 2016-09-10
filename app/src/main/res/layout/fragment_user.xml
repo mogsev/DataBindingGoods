@@ -1,0 +1,97 @@
+<layout>
+
+    <data>
+
+        <variable
+            name="userModel"
+            type="com.mogsev.application.databindinggoods.viewmodel.UserModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_vertical_margin"
+        tools:context="com.mogsev.application.databindinggoods.fragment.UserFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/tvFirsName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:hint="@string/first_name"
+                android:text="@{userModel.firstName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@+id/tvFirsName"
+                android:layout_toRightOf="@+id/tvFirsName"
+                android:hint="@string/last_name"
+                android:text="@{userModel.lastName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <ImageButton
+                android:layout_width="@dimen/dim_height"
+                android:layout_height="@dimen/dim_height"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="@{() -> userModel.setEdit}"
+                android:src="@android:drawable/ic_menu_edit"
+                android:visibility="@{userModel.visEdit}" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:visibility="@{userModel.visSave}">
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name"
+                android:text="@={userModel.firstName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@+id/etFirstName"
+                android:layout_toRightOf="@+id/etFirstName"
+                android:hint="@string/last_name"
+                android:text="@={userModel.lastName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <ImageButton
+                android:layout_width="@dimen/dim_height"
+                android:layout_height="@dimen/dim_height"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="@{() -> userModel.setEdit}"
+                android:src="@drawable/check" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
