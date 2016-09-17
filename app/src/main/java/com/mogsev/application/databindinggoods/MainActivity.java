@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.mogsev.application.databindinggoods.fragment.MainActivityFragment;
 import com.mogsev.application.databindinggoods.fragment.UserFragment;
+import com.mogsev.application.databindinggoods.helper.SettingsHelper;
 
 public class MainActivity extends AppCompatActivity implements UserFragment.OnUserFragmentListener {
     private static final String TAG = "MainActivity";
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements UserFragment.OnUs
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Log.i(TAG, "ID: ".concat(String.valueOf(SettingsHelper.getInstance().getID())));
 
         runFragmentTransaction(MainActivityFragment.newInstance(), MAIN_ACTIVITY_FRAGMENT);
     }

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.mogsev.application.databindinggoods.MainActivity;
 import com.mogsev.application.databindinggoods.R;
 import com.mogsev.application.databindinggoods.databinding.FragmentMainBinding;
+import com.mogsev.application.databindinggoods.helper.SettingsHelper;
 
 public class MainActivityFragment extends Fragment {
     private static final String TAG = "MainActivityFragment";
@@ -29,6 +30,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView");
+        Log.i(TAG, "ID: ".concat(String.valueOf(SettingsHelper.getInstance().getID())));
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
         binding.setActivity((MainActivity) getActivity());
         binding.btnGoodsFragment.setOnClickListener(new View.OnClickListener() {

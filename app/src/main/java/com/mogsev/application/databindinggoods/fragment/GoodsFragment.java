@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import com.mogsev.application.databindinggoods.R;
 import com.mogsev.application.databindinggoods.adapter.RVGoodsAdapter;
 import com.mogsev.application.databindinggoods.databinding.FragmentGoodsBinding;
+import com.mogsev.application.databindinggoods.helper.SettingsHelper;
 import com.mogsev.application.databindinggoods.model.Goods;
 
 public class GoodsFragment extends Fragment {
@@ -42,6 +43,7 @@ public class GoodsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate");
+        SettingsHelper.getInstance().saveID(25);
         rvGoodsAdapter = new RVGoodsAdapter(this);
         rvGoodsAdapterFilter = new RVGoodsAdapter(this);
     }
