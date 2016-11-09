@@ -13,4 +13,6 @@
     <string name="goods_hint_country">Country</string>
 
     <string name="goods_no_item">No objects</string>
+
+    <string name="item_switch_title">On/Off</string>
 </resources>

@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25"
 
     defaultConfig {
         applicationId "com.mogsev.application.databindinggoods"
         minSdkVersion 14
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.0.4"
     }
 
     buildTypes {
@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    final SUPPORT_LIBRARY_VERSION = '24.2.0'
+    final SUPPORT_LIBRARY_VERSION = '25.0.0'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
